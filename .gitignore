@@ -1,0 +1,4 @@
+.idea
+venv
+PortfolioLab/local_settings.py
+.DS_Store
