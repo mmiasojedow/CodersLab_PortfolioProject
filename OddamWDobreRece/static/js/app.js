@@ -60,10 +60,10 @@ document.addEventListener("DOMContentLoaded", function() {
      * TODO: callback to page change event
      */
     changePage(e) {
-      e.preventDefault();
-      const page = e.target.dataset.page;
-
-      console.log(page);
+      // e.preventDefault();
+      // const page = e.target.dataset.page;
+      //
+      // console.log(page);
     }
   }
   const helpSection = document.querySelector(".help");

@@ -23,9 +23,9 @@ class LandingPageView(View):
         local_list = Institution.objects.filter(type=3)
 
         page = request.GET.get('page')
-        paginator_foundations = Paginator(foundations_list, 1)
-        paginator_organizations = Paginator(organizations_list, 1)
-        paginator_local = Paginator(local_list, 1)
+        paginator_foundations = Paginator(foundations_list, 5)
+        paginator_organizations = Paginator(organizations_list, 5)
+        paginator_local = Paginator(local_list, 5)
 
         foundations = paginator_foundations.get_page(page)
         organizations = paginator_organizations.get_page(page)
