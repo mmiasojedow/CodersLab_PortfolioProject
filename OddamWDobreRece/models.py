@@ -42,6 +42,6 @@ class Donation(models.Model):
 
     def __str__(self):
         if not self.user:
-            return 'Dla %s, worki: %s' % (self.institution, self.quantity)
+            return f'Dla {self.institution}, worki: {self.quantity}'
         else:
-            return '%s dla %s, worki: %s' % (self.user.username, self.institution, self.quantity)
+            return f'{self.user.username} dla {self.institution}, worki: {self.quantity}'
