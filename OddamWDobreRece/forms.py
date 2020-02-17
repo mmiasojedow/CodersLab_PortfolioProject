@@ -23,3 +23,8 @@ class RegistrationForm(forms.Form):
         password2 = cleaned_data.get('password2')
         if password != password2:
             raise forms.ValidationError('Hasła nie są identyczne')
+
+
+class LoginForm(forms.Form):
+    email = forms.EmailField(max_length=150, required=True, widget=forms.EmailInput(attrs={'placeholder': 'Email'}))
+    password = forms.CharField(required=True, widget=forms.PasswordInput(attrs={'placeholder': 'Hasło'}))
