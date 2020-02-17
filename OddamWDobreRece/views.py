@@ -1,8 +1,9 @@
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.views import View
 from django.core.paginator import Paginator
 
-from OddamWDobreRece.forms import RegistrationForm
+from OddamWDobreRece.forms import RegistrationForm, LoginForm
 from OddamWDobreRece.models import *
 
 
@@ -45,7 +46,28 @@ class AddDonationView(View):
 
 class LoginView(View):
     def get(self, request):
-        return render(request, 'login.html')
+        form = LoginForm()
+        return render(request, 'login.html', {'form': form})
+
+    def post(self, request):
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['email']
+            password = form.cleaned_data['password']
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('main')
+            else:
+                return redirect('register')
+        else:
+            return render(request, 'login.html', {'form': form})
+
+
+class LogoutView(View):
+    def get(self, request):
+        logout(request)
+        return redirect('main')
 
 
 class RegisterView(View):
