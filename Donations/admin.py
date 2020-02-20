@@ -1,5 +1,6 @@
 from django.contrib import admin
-from OddamWDobreRece.models import *
+
+from Donations.models import *
 
 # Register your models here.
 
