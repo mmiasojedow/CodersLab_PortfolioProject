@@ -145,13 +145,13 @@
                 {% endfor %}
             </ul>
 
-            <ul class="help--slides-pagination">
-                {% for page in foundations.paginator.page_range %}
-                    <li><a href="?page={{ page }}#help"
-                           class="btn btn--small btn--without-border {% if page == foundations.number %}active{% endif %}"
-                           data-page="{{ page }}">{{ page }}</a></li>
-                {% endfor %}
-            </ul>
+{#            <ul class="help--slides-pagination">#}
+{#                {% for page in foundations.paginator.page_range %}#}
+{#                    <li><a href="?page={{ page }}#help"#}
+{#                           class="btn btn--small btn--without-border {% if page == foundations.number %}active{% endif %}"#}
+{#                           data-page="{{ page }}">{{ page }}</a></li>#}
+{#                {% endfor %}#}
+{#            </ul>#}
 
         </div>
 
@@ -176,13 +176,13 @@
                 {% endfor %}
             </ul>
 
-            <ul class="help--slides-pagination">
-                {% for page in organizations.paginator.page_range %}
-                    <li><a href="?page={{ page }}#help"
-                           class="btn btn--small btn--without-border {% if page == organizations.number %}active{% endif %}"
-                           data-page="{{ page }}">{{ page }}</a></li>
-                {% endfor %}
-            </ul>
+{#            <ul class="help--slides-pagination">#}
+{#                {% for page in organizations.paginator.page_range %}#}
+{#                    <li><a href="?page={{ page }}#help"#}
+{#                           class="btn btn--small btn--without-border {% if page == organizations.number %}active{% endif %}"#}
+{#                           data-page="{{ page }}">{{ page }}</a></li>#}
+{#                {% endfor %}#}
+{#            </ul>#}
         </div>
 
         <!-- SLIDE 3 -->
@@ -206,13 +206,13 @@
                 {% endfor %}
             </ul>
 
-            <ul class="help--slides-pagination">
-                {% for page in local_collections.paginator.page_range %}
-                    <li><a href="?page={{ page }}#help"
-                           class="btn btn--small btn--without-border {% if page == local_collections.number %}active{% endif %}"
-                           data-page="{{ page }}">{{ page }}</a></li>
-                {% endfor %}
-            </ul>
+{#            <ul class="help--slides-pagination">#}
+{#                {% for page in local_collections.paginator.page_range %}#}
+{#                    <li><a href="?page={{ page }}#help"#}
+{#                           class="btn btn--small btn--without-border {% if page == local_collections.number %}active{% endif %}"#}
+{#                           data-page="{{ page }}">{{ page }}</a></li>#}
+{#                {% endfor %}#}
+{#            </ul>#}
         </div>
     </section>
 {% endblock %}

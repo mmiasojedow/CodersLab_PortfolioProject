@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.views import View
 from django.core.paginator import Paginator
 
-from OddamWDobreRece.forms import RegistrationForm, LoginForm
+from OddamWDobreRece.forms import *
 from OddamWDobreRece.models import *
 
 
@@ -21,18 +21,18 @@ class LandingPageView(View):
                 supported_institutions.append(donation.institution.name)
         supported_institutions_counter = len(supported_institutions)
 
-        foundations_list = Institution.objects.filter(type=1)
-        organizations_list = Institution.objects.filter(type=2)
-        local_list = Institution.objects.filter(type=3)
+        foundations = Institution.objects.filter(type=1)
+        organizations = Institution.objects.filter(type=2)
+        local_collections = Institution.objects.filter(type=3)
 
-        page = request.GET.get('page')
-        paginator_foundations = Paginator(foundations_list, 5)
-        paginator_organizations = Paginator(organizations_list, 5)
-        paginator_local = Paginator(local_list, 5)
-
-        foundations = paginator_foundations.get_page(page)
-        organizations = paginator_organizations.get_page(page)
-        local_collections = paginator_local.get_page(page)
+        # page = request.GET.get('page')
+        # paginator_foundations = Paginator(foundations_list, 1)
+        # paginator_organizations = Paginator(organizations_list, 1)
+        # paginator_local = Paginator(local_list, 1)
+        #
+        # foundations = paginator_foundations.get_page(page)
+        # organizations = paginator_organizations.get_page(page)
+        # local_collections = paginator_local.get_page(page)
         return render(request, 'base.html',
                       {'sacks': sacks_counter, 'institutions': supported_institutions_counter,
                        'foundations': foundations, 'organizations': organizations,
