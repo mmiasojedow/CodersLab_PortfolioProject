@@ -1,4 +1,4 @@
-"""PortfolioLab URL Configuration
+"""OddamWDobreRece URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from OddamWDobreRece.views import *
+from Donations.views import *
+from MyUser.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
