@@ -1,6 +1,7 @@
 from django import forms
+from django.contrib.auth.forms import AuthenticationForm
 from django.core.exceptions import ValidationError
-from MyUser.models import User
+from my_user.models import User
 
 
 def email_validator(value):
@@ -25,6 +26,6 @@ class RegistrationForm(forms.Form):
             raise forms.ValidationError('Hasła nie są identyczne')
 
 
-class LoginForm(forms.Form):
-    email = forms.EmailField(max_length=150, required=True, widget=forms.EmailInput(attrs={'placeholder': 'Email'}))
-    password = forms.CharField(required=True, widget=forms.PasswordInput(attrs={'placeholder': 'Hasło'}))
+class LoginForm(AuthenticationForm):
+    email = forms.EmailField(widget=forms.EmailInput(attrs={'placeholder': 'Email'}))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Hasło'}))

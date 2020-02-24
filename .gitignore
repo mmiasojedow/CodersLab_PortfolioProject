@@ -1,5 +1,5 @@
 .idea
 venv
-OddamWDobreRece/local_settings.py
+oddam_w_dobre_rece/local_settings.py
 .DS_Store
 __pycache__

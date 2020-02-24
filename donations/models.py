@@ -1,6 +1,9 @@
 from django.db import models
-from MyUser.models import User
+from django.contrib.auth import get_user_model
+
 # Create your models here.
+
+User = get_user_model()
 
 TYPES = (
     (1, 'Fundacja'),
@@ -43,4 +46,4 @@ class Donation(models.Model):
         if not self.user:
             return f'Dla {self.institution}, worki: {self.quantity}'
         else:
-            return f'{self.user.username} dla {self.institution}, worki: {self.quantity}'
+            return f'{self.user} dla {self.institution}, worki: {self.quantity}'

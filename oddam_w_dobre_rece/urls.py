@@ -1,4 +1,4 @@
-"""OddamWDobreRece URL Configuration
+"""oddam_w_dobre_rece URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -15,15 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
-from Donations.views import *
-from MyUser.views import *
+from django.contrib.auth import views as auth_views
+from donations.views import LandingPageView, AddDonationView
+from my_user.views import LogInView, LogOutView, RegisterView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', LandingPageView.as_view(), name='main'),
     path('add_donation/', AddDonationView.as_view(), name='donation'),
-    path('login/', LoginView.as_view(), name='login'),
-    path('logout/', LogoutView.as_view(), name='logout'),
+    path('login/', LogInView.as_view(), name='login'),
+    path('logout/', LogOutView.as_view(), name='logout'),
     path('register/', RegisterView.as_view(), name='register'),
 ]
