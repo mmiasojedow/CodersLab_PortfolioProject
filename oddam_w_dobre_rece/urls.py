@@ -17,13 +17,14 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib.auth import views as auth_views
 from donations.views import LandingPageView, AddDonationView
-from my_user.views import LogInView, LogOutView, RegisterView
+from my_user.forms import LoginForm
+from my_user.views import RegisterView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', LandingPageView.as_view(), name='main'),
     path('add_donation/', AddDonationView.as_view(), name='donation'),
-    path('login/', LogInView.as_view(), name='login'),
-    path('logout/', LogOutView.as_view(), name='logout'),
+    path('login/', auth_views.LoginView.as_view(template_name='my_user/login.html', authentication_form=LoginForm), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('register/', RegisterView.as_view(), name='register'),
 ]

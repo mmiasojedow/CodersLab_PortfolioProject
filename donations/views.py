@@ -5,9 +5,6 @@ from django.views import View
 from donations.models import Institution, Donation
 
 
-# Create your views here.
-
-
 class LandingPageView(View):
     def get(self, request):
         sacks_counter = 0

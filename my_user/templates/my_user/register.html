@@ -7,10 +7,10 @@
         <form method="post">
             {% csrf_token %}
             <div class="form-group">
-                {{ form.name }}
+                {{ form.first_name }}
             </div>
             <div class="form-group">
-                {{ form.surname }}
+                {{ form.last_name }}
             </div>
             <div class="form-group">
                 {{ form.email.errors}}
