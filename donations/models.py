@@ -1,6 +1,8 @@
+from django.contrib.auth import get_user_model
 from django.db import models
-from MyUser.models import User
-# Create your models here.
+from django.utils.translation import ugettext_lazy as _
+
+User = get_user_model()
 
 TYPES = (
     (1, 'Fundacja'),
@@ -41,6 +43,6 @@ class Donation(models.Model):
 
     def __str__(self):
         if not self.user:
-            return f'Dla {self.institution}, worki: {self.quantity}'
+            return _(f'for {self.institution}, sacks: {self.quantity}')
         else:
-            return f'{self.user.username} dla {self.institution}, worki: {self.quantity}'
+            return _(f'{self.user} for {self.institution}, sacks: {self.quantity}')
