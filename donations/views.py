@@ -2,7 +2,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.views import View
 
-from donations.models import Donation, Institution
+from donations.models import Category, Donation, Institution
 
 
 class LandingPageView(View):
@@ -29,4 +29,6 @@ class LandingPageView(View):
 
 class AddDonationView(LoginRequiredMixin, View):
     def get(self, request):
-        return render(request, 'donations/form.html')
+        categories = Category.objects.all()
+        institutions = Institution.objects.all()
+        return render(request, 'donations/form.html', {'categories': categories, 'institutions': institutions})
