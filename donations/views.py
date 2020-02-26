@@ -2,7 +2,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.views import View
 
-from donations.models import Institution, Donation
+from donations.models import Donation, Institution
 
 
 class LandingPageView(View):

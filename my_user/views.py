@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from django.shortcuts import render, redirect
+from django.shortcuts import redirect, render
 from django.views import View
 
 from my_user.forms import RegisterForm
