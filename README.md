@@ -11,3 +11,6 @@ The application allows user to:
 * Python
 * Django
 * JavaScript
+
+## Status
+In progess
