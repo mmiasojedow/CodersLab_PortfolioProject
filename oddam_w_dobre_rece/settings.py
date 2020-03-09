@@ -79,12 +79,7 @@ AUTH_USER_MODEL = 'my_user.User'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-try:
-    from oddam_w_dobre_rece.local_settings import DATABASES
-except ModuleNotFoundError:
-    print("Brak konfiguracji bazy danych w pliku local_settings.py!")
-    print("Uzupełnij dane i spróbuj ponownie!")
-    exit(0)
+DATABASE = []
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators

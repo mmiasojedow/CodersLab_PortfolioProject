@@ -19,7 +19,7 @@ from django.urls import path
 
 from donations.views import AddDonationView, LandingPageView
 from my_user.forms import LoginForm
-from my_user.views import RegisterView
+from my_user.views import RegisterView, ProfileView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,4 +29,5 @@ urlpatterns = [
          name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('register/', RegisterView.as_view(), name='register'),
+    path('profile/', ProfileView.as_view(), name='profile'),
 ]
