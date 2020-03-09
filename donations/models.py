@@ -43,6 +43,6 @@ class Donation(models.Model):
 
     def __str__(self):
         if not self.user:
-            return _(f'for {self.institution}, sacks: {self.quantity}')
+            return f'for {self.institution}, sacks: {self.quantity}'
         else:
-            return _(f'{self.user} for {self.institution}, sacks: {self.quantity}')
+            return f'{self.user} for {self.institution}, sacks: {self.quantity}'

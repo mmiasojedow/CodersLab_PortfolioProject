@@ -1,0 +1,22 @@
+{% extends 'donations/base.html' %}
+{% block header_class %}{% endblock %}
+{% block slogan %}{% endblock %}
+{% block content %}
+    <section>
+        <div class="container">
+            <h2>
+                <p>{{ user.first_name }} {{ user.last_name }}</p>
+                <p>{{ user.email }}</p>
+            </h2>
+            <div class="profile_donations">
+                <h3>Przekazano:</h3>
+                <ul>
+                    {% for donation in donations %}
+                        <p>{{ donation.quantity }} worków dla {{ donation.institution }} (odbiór
+                            - {{ donation.pick_up_date }} o {{ donation.pick_up_time }})</p>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}

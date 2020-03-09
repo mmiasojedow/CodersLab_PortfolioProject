@@ -1,7 +1,9 @@
 from django.contrib.auth import get_user_model
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect, render
 from django.views import View
 
+from donations.models import Donation
 from my_user.forms import RegisterForm
 
 User = get_user_model()
@@ -24,3 +26,9 @@ class RegisterView(View):
             return redirect('login')
         else:
             return render(request, 'my_user/register.html', {'form': form})
+
+
+class ProfileView(LoginRequiredMixin, View):
+    def get(self, request):
+        donations = Donation.objects.filter(user=request.user)
+        return render(request, 'my_user/profile.html', {'donations': donations})
