@@ -2,6 +2,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.views import View
 
+from donations.forms import DonationForm
 from donations.models import Category, Donation, Institution
 
 
@@ -31,4 +32,10 @@ class AddDonationView(LoginRequiredMixin, View):
     def get(self, request):
         categories = Category.objects.all()
         institutions = Institution.objects.all()
-        return render(request, 'donations/form.html', {'categories': categories, 'institutions': institutions})
+        form = DonationForm()
+        return render(request, 'donations/form.html',
+                      {'categories': categories, 'institutions': institutions, 'form': form})
+
+    def post(self, request):
+        form = DonationForm(request.POST)
+        print(form.cleaned_data)

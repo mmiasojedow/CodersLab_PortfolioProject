@@ -8,6 +8,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous">
+
+    </script>
 </head>
 <body>
 <header class="{% block header_class %}header--main-page{% endblock %}">
@@ -145,13 +151,13 @@
                 {% endfor %}
             </ul>
 
-{#            <ul class="help--slides-pagination">#}
-{#                {% for page in foundations.paginator.page_range %}#}
-{#                    <li><a href="?page={{ page }}#help"#}
-{#                           class="btn btn--small btn--without-border {% if page == foundations.number %}active{% endif %}"#}
-{#                           data-page="{{ page }}">{{ page }}</a></li>#}
-{#                {% endfor %}#}
-{#            </ul>#}
+            {#            <ul class="help--slides-pagination">#}
+            {#                {% for page in foundations.paginator.page_range %}#}
+            {#                    <li><a href="?page={{ page }}#help"#}
+            {#                           class="btn btn--small btn--without-border {% if page == foundations.number %}active{% endif %}"#}
+            {#                           data-page="{{ page }}">{{ page }}</a></li>#}
+            {#                {% endfor %}#}
+            {#            </ul>#}
 
         </div>
 
@@ -176,13 +182,13 @@
                 {% endfor %}
             </ul>
 
-{#            <ul class="help--slides-pagination">#}
-{#                {% for page in organizations.paginator.page_range %}#}
-{#                    <li><a href="?page={{ page }}#help"#}
-{#                           class="btn btn--small btn--without-border {% if page == organizations.number %}active{% endif %}"#}
-{#                           data-page="{{ page }}">{{ page }}</a></li>#}
-{#                {% endfor %}#}
-{#            </ul>#}
+            {#            <ul class="help--slides-pagination">#}
+            {#                {% for page in organizations.paginator.page_range %}#}
+            {#                    <li><a href="?page={{ page }}#help"#}
+            {#                           class="btn btn--small btn--without-border {% if page == organizations.number %}active{% endif %}"#}
+            {#                           data-page="{{ page }}">{{ page }}</a></li>#}
+            {#                {% endfor %}#}
+            {#            </ul>#}
         </div>
 
         <!-- SLIDE 3 -->
@@ -206,13 +212,13 @@
                 {% endfor %}
             </ul>
 
-{#            <ul class="help--slides-pagination">#}
-{#                {% for page in local_collections.paginator.page_range %}#}
-{#                    <li><a href="?page={{ page }}#help"#}
-{#                           class="btn btn--small btn--without-border {% if page == local_collections.number %}active{% endif %}"#}
-{#                           data-page="{{ page }}">{{ page }}</a></li>#}
-{#                {% endfor %}#}
-{#            </ul>#}
+            {#            <ul class="help--slides-pagination">#}
+            {#                {% for page in local_collections.paginator.page_range %}#}
+            {#                    <li><a href="?page={{ page }}#help"#}
+            {#                           class="btn btn--small btn--without-border {% if page == local_collections.number %}active{% endif %}"#}
+            {#                           data-page="{{ page }}">{{ page }}</a></li>#}
+            {#                {% endfor %}#}
+            {#            </ul>#}
         </div>
     </section>
 {% endblock %}
