@@ -262,7 +262,6 @@ document.addEventListener("DOMContentLoaded", function () {
         categories[i].addEventListener("change", (e) => {
             if (e.target.checked) {
                 let category = e.target.value;
-                console.log(category);
                 let organizations = document.getElementsByName("organization");
 
                 for (let j = 0; j < organizations.length; j++) {
@@ -278,5 +277,34 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    //form summary
+    let final_btn = document.getElementById('final-btn');
+    final_btn.addEventListener("click", event => {
+        let category = $("input[name='categories']:checked").next().next().text();
+        let quantity = $("input[name='quantity']").val();
+        let organization = $("input[name='organization']:checked").next().next().children('.title').text();
+        let address = $("input[name='address']").val();
+        let city = $("input[name='city']").val();
+        let zip_code = $("input[name='zip_code']").val();
+        let phone_number = $("input[name='phone_number']").val();
+        let pick_up_date = $("input[name='pick_up_date']").val();
+        let pick_up_time = $("input[name='pick_up_time']").val();
+        let pick_up_comment = $("textarea[name='pick_up_comment']").val();
+        console.log(category, quantity, organization, address, city, zip_code, phone_number, pick_up_date, pick_up_time, pick_up_comment);
+        let sacks = `${quantity} worków ${category}`;
+        let inst = `Dla ${organization}`;
+        $("#sacks_sum").text(sacks);
+        $("#inst_sum").text(inst);
+        $("#address").text(address);
+        $("#city").text(city);
+        $("#zip_code").text(zip_code);
+        $("#phone_number").text(phone_number);
+        $("#pick_up_date").text(pick_up_date);
+        $("#pick_up_time").text(pick_up_time);
+        $("#pick_up_comment").text(pick_up_comment);
+
+
+
+    })
 });
 
