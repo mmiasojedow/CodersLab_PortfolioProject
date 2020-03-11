@@ -262,13 +262,13 @@ document.addEventListener("DOMContentLoaded", function () {
         categories[i].addEventListener("change", (e) => {
             if (e.target.checked) {
                 let category = e.target.value;
-                let organizations = document.getElementsByName("organization");
+                let institutions = document.getElementsByName("institution");
 
-                for (let j = 0; j < organizations.length; j++) {
-                    if (!organizations[j].classList.contains(category)) {
-                        organizations[j].parentElement.parentElement.style.display = "none";
+                for (let j = 0; j < institutions.length; j++) {
+                    if (!institutions[j].classList.contains(category)) {
+                        institutions[j].parentElement.parentElement.style.display = "none";
                     } else {
-                        organizations[j].parentElement.parentElement.style.display = "block";
+                        institutions[j].parentElement.parentElement.style.display = "block";
 
                     }
                 }
@@ -282,7 +282,7 @@ document.addEventListener("DOMContentLoaded", function () {
     final_btn.addEventListener("click", event => {
         let category = $("input[name='categories']:checked").next().next().text();
         let quantity = $("input[name='quantity']").val();
-        let organization = $("input[name='organization']:checked").next().next().children('.title').text();
+        let institution = $("input[name='institution']:checked").next().next().children('.title').text();
         let address = $("input[name='address']").val();
         let city = $("input[name='city']").val();
         let zip_code = $("input[name='zip_code']").val();
@@ -290,9 +290,9 @@ document.addEventListener("DOMContentLoaded", function () {
         let pick_up_date = $("input[name='pick_up_date']").val();
         let pick_up_time = $("input[name='pick_up_time']").val();
         let pick_up_comment = $("textarea[name='pick_up_comment']").val();
-        console.log(category, quantity, organization, address, city, zip_code, phone_number, pick_up_date, pick_up_time, pick_up_comment);
+
         let sacks = `${quantity} worków ${category}`;
-        let inst = `Dla ${organization}`;
+        let inst = `Dla ${institution}`;
         $("#sacks_sum").text(sacks);
         $("#inst_sum").text(inst);
         $("#address").text(address);
@@ -302,7 +302,6 @@ document.addEventListener("DOMContentLoaded", function () {
         $("#pick_up_date").text(pick_up_date);
         $("#pick_up_time").text(pick_up_time);
         $("#pick_up_comment").text(pick_up_comment);
-
 
 
     })

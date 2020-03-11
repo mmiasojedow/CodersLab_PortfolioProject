@@ -57,16 +57,16 @@
                 <!-- STEP 1: class .active is switching steps -->
                 <div data-step="1" class="active">
                     <h3>Zaznacz co chcesz oddać:</h3>
-                    {% for category_id, category_label in form.categories.field.choices %}
+                    {% for category in categories %}
                         <div class="form-group form-group--checkbox">
                             <label>
                                 <input
                                         type="radio"
                                         name="categories"
-                                        value="{{ category_id }}"
+                                        value="{{ category.pk }}"
                                 />
                                 <span class="checkbox radio"></span>
-                                <span class="description">{{ category_label }}</span>
+                                <span class="description">{{ category.name }}</span>
                             </label>
                         </div>
                     {% endfor %}
@@ -101,7 +101,7 @@
                     {% for institution in institutions %}
                         <div class="form-group form-group--checkbox">
                             <label>
-                                <input type="radio" name="organization" value="{{ institution.pk }}" class="{% for category in institution.categories.all %}{{ category.pk }} {% endfor %}"/>
+                                <input type="radio" name="institution" value="{{ institution.pk }}" class="{% for category in institution.categories.all %}{{ category.pk }} {% endfor %}"/>
                                 <span class="checkbox radio"></span>
                                 <span class="description">
                          <div class="title">{{ institution.get_type_display }} {{ institution.name }}</div>
