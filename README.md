@@ -13,4 +13,4 @@ The application allows user to:
 * JavaScript
 
 ## Status
-In progess
+In progress
